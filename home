@@ -1,0 +1,51 @@
+<mat-toolbar color="primary" class="mat-elevation-z8">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Kshatriya</span>
+  <span class="example-spacer"></span>
+
+  <button mat-button routerLink="emp"><mat-icon>login</mat-icon> Sign up</button>
+
+  <!-- <button mat-button routerLink="home">Home</button>
+  <button mat-button routerLink="emp">Employees</button>
+  <button mat-button routerLink="cus">Customers</button>
+  <button mat-button routerLink="abt">About Us</button> -->
+
+</mat-toolbar>
+
+<mat-drawer-container autosize>
+  <mat-drawer #drawer opened="true" mode="side">
+
+    <mat-nav-list>
+           <mat-list-item>
+            <button mat-button routerLink="home"><mat-icon>home</mat-icon>Home</button>
+           </mat-list-item>
+
+           <mat-list-item>
+            <button mat-button routerLink="emp"><mat-icon>assignment_ind</mat-icon>Employees</button>
+           </mat-list-item>
+
+           <mat-list-item>
+            <button mat-button routerLink="car"><mat-icon>local_taxi</mat-icon>Cars</button>
+           </mat-list-item>
+
+           <mat-list-item>
+            <button mat-button routerLink="cus"><mat-icon>settings</mat-icon>Customer</button>
+           </mat-list-item>
+
+           <mat-list-item>
+            <button mat-button routerLink="abt"><mat-icon>analytics</mat-icon>analytics</button>
+           </mat-list-item>
+
+      
+    </mat-nav-list>
+
+  </mat-drawer>
+  <mat-drawer-content>
+    <div style="margin-left:5px;margin-top:10px;height:470px;">
+      <router-outlet></router-outlet>
+    </div>
+    
+  </mat-drawer-content>
+</mat-drawer-container>
